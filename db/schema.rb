@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729005950) do
+ActiveRecord::Schema.define(version: 20140729185802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_keys", force: true do |t|
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "access_keys", ["token"], name: "index_access_keys_on_token", using: :btree
 
   create_table "appointments", force: true do |t|
     t.datetime "start_time"
