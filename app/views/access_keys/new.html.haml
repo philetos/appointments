@@ -1,0 +1,31 @@
+%main{:role => "main"}
+  .app-main-container
+    .row
+      .app-logo-container
+        = fa_icon "clock-o", style: "font-size: 150px"
+        .app-name Appointments Api
+      .login-button-container 
+        .btn-group
+          %button.btn.btn-default.btn-lg#generate-key-btn
+            Generate Access Key
+.container.bottom-container
+  .row
+
+    .well.col-sm-6.col-sm-offset-3
+      .zero-clipboard
+        %span.btn-clipboard#clip_button{"data-clipboard-target"=>"access-key"} Copy 
+      .access-key-label Your Access Key:
+      #access-key 
+
+:javascript
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#clip_button"));
+
+    $('#clip_button').tooltip({trigger: 'click','placement': 'top', 'title': 'Copied!'});
+
+    $("#clip_button").on('mouseleave',function(){
+      $(this).tooltip('hide');
+    });
+
+  });
+

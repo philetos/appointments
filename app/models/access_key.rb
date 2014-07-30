@@ -10,7 +10,7 @@
 
 class AccessKey < ActiveRecord::Base
 
-  before_create :generate_token
+  before_validation :generate_token
 
   validates :token, presence: true
 

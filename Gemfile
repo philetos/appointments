@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry-rails' 
+gem 'zeroclipboard-rails'
 
 group :development do 
   gem 'spring' 
