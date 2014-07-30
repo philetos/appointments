@@ -12,8 +12,6 @@ class AccessKey < ActiveRecord::Base
 
   before_validation :generate_token
 
-  validates :token, presence: true
-
   private
 
   def generate_token
