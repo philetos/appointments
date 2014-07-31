@@ -18,5 +18,13 @@ class Appointment < ActiveRecord::Base
   validates :end_time, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  
+
+  validates_with AppointmentOverlapValidator
+  validates_with AppointmentStartEndTimeValidator
+
+  scope :overlaps, ->(appt) { where("((start_time <= ?) and (end_time >= ?))", appt.end_time, appt.start_time) }
+
+  def overlaps_existing_appointment?
+    Appointment.overlaps(self).reject{ |appt| appt == self }.present?
+  end
 end
