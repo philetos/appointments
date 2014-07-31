@@ -21,6 +21,7 @@ class Appointment < ActiveRecord::Base
 
   validates_with AppointmentOverlapValidator
   validates_with AppointmentStartEndTimeValidator
+  validates_with FutureAppointmentValidator
 
   scope :overlaps, ->(appt) { where("((start_time <= ?) and (end_time >= ?))", appt.end_time, appt.start_time) }
 

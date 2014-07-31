@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 describe AccessKeysController do
+  describe "#new" do 
+    it "should render a new view" do
+      get :new
+      should render_template(:new) 
+    end
+  end
+
   describe "#create" do
     it "should create a new AccessKey" do 
       expect {

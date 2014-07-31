@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :access_keys, only: [ :new, :create ]
 
   namespace :api, defaults: { format: :json } do
-    resources :appointments, only: [ :create, :update, :destroy ] do 
+    resources :appointments, only: [ :create, :update, :destroy] do 
       collection do
         get :list
       end
