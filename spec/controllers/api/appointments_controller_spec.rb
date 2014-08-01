@@ -221,7 +221,7 @@ describe Api::AppointmentsController do
 
         end
 
-        it "should return 400 status code" do 
+        it "should return 422 status code" do 
           appointment_params = {
             first_name: "Bill",
             start_time: "#{@future_date}T18:00:00.000Z",
@@ -229,7 +229,7 @@ describe Api::AppointmentsController do
           }
           post :create, { format: :json, token: @access_key.token}.merge(appointment_params)
 
-          response.status.should == 400
+          response.status.should == 422
         end
       end
     end
@@ -293,7 +293,7 @@ describe Api::AppointmentsController do
 
         end
 
-        it "should return 400 status code" do 
+        it "should return 422 status code" do 
           appointment_params = {
             first_name: " ",
             start_time: "#{@future_date}T18:00:00.000Z",
@@ -301,7 +301,7 @@ describe Api::AppointmentsController do
           }
           post :update, { format: :json, token: @access_key.token, id: @appointment.id }.merge(appointment_params)
 
-          response.status.should == 400
+          response.status.should == 422
         end
       end
     end

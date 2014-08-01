@@ -15,7 +15,7 @@ class Api::AppointmentsController < Api::ApplicationController
       render template: 'api/appointments/show', status: :created
     else
       message = "Unable to create this appointment"
-      render json: { message: message, errors: @appointment.errors }, status: :bad_request
+      render json: { message: message, errors: @appointment.errors }, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class Api::AppointmentsController < Api::ApplicationController
       render template: 'api/appointments/show', status: :ok
     else
       message = "Unable to update this appointment"
-      render json: { message: message, errors: @appointment.errors, appointment: @appointment }, status: :bad_request
+      render json: { message: message, errors: @appointment.errors, appointment: @appointment }, status: :unprocessable_entity
     end
   end
 

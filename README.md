@@ -3,9 +3,9 @@
 > A database-driven RESTful web API for managing appointment 
 resources
 
-## Dependencies
+#### For API Documentation visit [here](https://github.com/philetos/appointments/blob/master/doc/api/main.md)
 
-> Note: This project is running edge Rails and other pre-release gems. You may need to upgrade your dependencies often.
+## Dependencies
 
 * Bundler (1.5.3)
 * Rails (4.1.4)
@@ -21,5 +21,8 @@ To run the app..
 3. Install gems with `bundle install`
 4. Run `rake setup` to setup database, migrate, populate seeds, and import data.
 
+## Testing
 
-## [API Documentation](https://github.com/philetos/appointments/blob/master/doc/api/main.md)
+This api is tested using RSpec. To run the test suite, `bundle install` then run:
+
+    $ rspec spec

@@ -10,5 +10,8 @@ Rails.application.routes.draw do
         get :list
       end
     end
+
+    get '*url',   to: 'application#not_found'
+    post '*url',  to: 'application#not_found'
   end
 end
