@@ -8,7 +8,7 @@ All API requests are based off of the base URL below:
 http://appts-api.herokuapp.com/api
 ```
 
-All requests are sent and in JSON format.
+All requests are sent in JSON format.
 
 ### Access Key
 
