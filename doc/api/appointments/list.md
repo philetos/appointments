@@ -56,7 +56,7 @@ Example:
 
 > Filtered
 
-Passing the optional `start_time_filter` or `end_time_filter`, will return a `200 Ok` status including the fitlered appointment details .
+Passing the optional `start_time_filter` or `end_time_filter`, will return a `200 Ok` status including the filtered appointment details .
 
 Example:
 
