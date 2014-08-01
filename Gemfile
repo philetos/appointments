@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry-rails' 
 gem 'zeroclipboard-rails'
+gem 'rails_12factor'
 
 group :development do 
   gem 'spring' 
